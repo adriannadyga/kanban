@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
         this.id = randomString();
         this.name = name;
-        this.element = generateTemplate('column-template', { name: this.name });
+        this.element = generateTemplate('column-template', { name: this.name, id: this.id });
 
         this.element.querySelector('.column').addEventListener('click', function (event) {
             //usuwanie kolumny po kliknięciu
@@ -75,14 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var board = {
         name: 'Kanban Board',
         addColumn: function(column) {
-          this.element.appendChild(column.element);
-          initSortable(column.id); 
+            this.element.appendChild(column.element);
+            initSortable(column.id); 
         },
         element: document.querySelector('#board .column-container')
     };
     //korzystanie z biblioteki sortable: opcja drag'n'drop
     function initSortable(id) {
         var el = document.getElementById(id);
+        console.log(el);
         var sortable = Sortable.create(el, {
           group: 'kanban',
           sort: true
