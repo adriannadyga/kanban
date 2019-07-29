@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Kanban board</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +16,7 @@
         <div class="column">
             <h2 class="column-title">{{ name }}</h2>
             <ul id="{{ id }}" class="column-card-list"></ul>
-            <button class="btn-delete">X</button>
+            <button class="btn-delete delete-column">X</button>
             <button class="add-card">Add a card</button>
         </div>
     </script>
@@ -23,7 +24,7 @@
     <script id="card-template" type="x-tmpl-mustache">
         <div class="card">
           <p class="card-description">{{ description }}</p>
-          <button class="btn-delete">x</button>
+          <button class="btn-delete delete-card">x</button>
         </div
     </script>
 

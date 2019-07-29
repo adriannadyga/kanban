@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     //korzystanie z biblioteki sortable: opcja drag'n'drop
     function initSortable(id) {
         var el = document.getElementById(id);
-        console.log(el);
         var sortable = Sortable.create(el, {
           group: 'kanban',
           sort: true
