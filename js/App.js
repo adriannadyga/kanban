@@ -1,3 +1,4 @@
+'use strict'
 
 //ZMIENNE DO KOMUNIKACJI Z SERWEREM
 var baseUrl = 'https://cors-anywhere.herokuapp.com/https://kodilla.com/pl/bootcamp-api'; //podstawowy adres serwera
@@ -31,11 +32,11 @@ function setupCards(col, cards) {
 }
 
 function generateTemplate(name, data, basicElement) {
-  	var template = document.getElementById(name).innerHTML;
-  	var element = document.createElement(basicElement || 'div');
+  var template = document.getElementById(name).innerHTML;
+	var element = document.createElement(basicElement || 'div');
   
-  	Mustache.parse(template);
-  	element.innerHTML = Mustache.render(template, data);
+  Mustache.parse(template);
+	element.innerHTML = Mustache.render(template, data);
   
-  	return element;
+  return element;
 }
